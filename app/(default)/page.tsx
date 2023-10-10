@@ -1,7 +1,8 @@
 export const metadata = {
-  title: 'Home - Open PRO',
-  description: 'Page description',
+  title: 'CNC Machining Services - Precision Manufacturing PRO',
+  description: 'Your source for high-precision CNC machining services.',
 }
+
 
 import Hero from '@/components/hero'
 import Features from '@/components/features'
