@@ -9,7 +9,7 @@ export default function FileUpload() {
   const [uploading, setUploading] = useState(false);
   const inputRef = useRef(null);
 
-  const onModelDataChange = (modelData, edgeData) => {
+  const onModelDataChange = (modelData: any, edgeData: any) => {
     // Do something with modelData and edgeData
     console.log("Model Data:", modelData);
     console.log("Edge Data:", edgeData);
