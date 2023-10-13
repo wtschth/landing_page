@@ -13,7 +13,7 @@ export default function Testimonials() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
             <h2 className="h2 mb-4">Hear from our Customers</h2>
-            <p className="text-xl text-gray-400">Discover what our satisfied clients have to say about our CNC machining services. Their experiences speak volumes about our quality and precision.</p>
+            <p className="text-xl text-gray-400">Hear firsthand what sets us apart in the world of composite filament winding, CNC turning, and machining.</p>
           </div>
 
           {/* Testimonials */}
@@ -29,7 +29,7 @@ export default function Testimonials() {
                   </svg>
                 </div>
               </div>
-              <blockquote className="text-lg text-gray-400 grow">— The CNC machining services provided by our company have been truly exceptional. They have helped us meet our manufacturing goals efficiently and with precision.</blockquote>
+              <blockquote className="text-lg text-gray-400 grow">"The CNC machining services provided by our company have been truly exceptional. They have helped us meet our manufacturing goals efficiently and with precision."</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
                 <cite className="text-gray-200 not-italic">John Smith</cite> - <a className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out" href="#0">CEO, CNC Manufacturing Co.</a>
               </div>
@@ -45,7 +45,7 @@ export default function Testimonials() {
                   </svg>
                 </div>
               </div>
-              <blockquote className="text-lg text-gray-400 grow">— We've partnered with this CNC machining service provider for years, and their commitment to quality and precision machining has helped us excel in the industry.</blockquote>
+              <blockquote className="text-lg text-gray-400 grow">"We've partnered with this CNC machining service provider for years, and their commitment to quality and precision machining has helped us excel in the industry."</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
                 <cite className="text-gray-200 not-italic">Alice Johnson</cite> - <a className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out" href="#0">COO, Precision Machinists Ltd.</a>
               </div>
@@ -61,7 +61,7 @@ export default function Testimonials() {
                   </svg>
                 </div>
               </div>
-              <blockquote className="text-lg text-gray-400 grow">— The precision and attention to detail in the CNC machining work provided by this company are truly impressive. They have consistently met our high-quality standards.</blockquote>
+              <blockquote className="text-lg text-gray-400 grow">"The precision and attention to detail in the CNC machining work provided by this company are truly impressive. They have consistently met our high-quality standards."</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
                 <cite className="text-gray-200 not-italic">Emily Anderson</cite> - <a className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out" href="#0">Engineering Manager, Precision Parts Inc.</a>
               </div>
