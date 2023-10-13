@@ -3,7 +3,6 @@ export const metadata = {
   description: 'Your source for high-precision CNC machining services.',
 }
 
-
 import FileUpload from '@/components/fileupload'
 import Newsletter from '@/components/newsletter'
 

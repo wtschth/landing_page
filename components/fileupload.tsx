@@ -5,35 +5,37 @@ import { useState, useRef } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 
-export const uploadModel = async (file, onModelDataChange) => {
-  const formData = new FormData();
-  formData.append('file', file);
-
-  try {
-    const response = await axios.post('http://localhost:8080/upload', formData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    });
-
-    if (response.data.success) {
-      onModelDataChange(response.data.modelData, response.data.edgeData);
-    } else {
-      console.error('File upload failed');
-    }
-  } catch (error) {
-    console.error('Error uploading file:', error);
-  }
-};
-
-export default function FileUpload({ onModelDataChange }) {
+export default function FileUpload() {
   const [uploading, setUploading] = useState(false);
   const inputRef = useRef(null);
+
+  const onModelDataChange = (modelData, edgeData) => {
+    // Do something with modelData and edgeData
+    console.log("Model Data:", modelData);
+    console.log("Edge Data:", edgeData);
+  };
 
   const handleChange = async (e) => {
     e.preventDefault();
     setUploading(true);
 
     const file = e.target.files[0];
-    await uploadModel(file, onModelDataChange);
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+      const response = await axios.post('http://localhost:8080/upload', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      });
+
+      if (response.data.success) {
+        onModelDataChange(response.data.modelData, response.data.edgeData);
+      } else {
+        console.error('File upload failed');
+      }
+    } catch (error) {
+      console.error('Error uploading file:', error);
+    }
 
     setUploading(false);
   };
