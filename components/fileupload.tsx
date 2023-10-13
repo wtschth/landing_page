@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function FileUpload() {
   const [uploading, setUploading] = useState(false);
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const onModelDataChange = (modelData: any, edgeData: any) => {
     // Do something with modelData and edgeData
@@ -15,30 +15,32 @@ export default function FileUpload() {
     console.log("Edge Data:", edgeData);
   };
 
-  const handleChange = async (e) => {
+  const handleChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setUploading(true);
 
-    const file = e.target.files[0];
-    const formData = new FormData();
-    formData.append('file', file);
+    if (e.target.files && e.target.files.length > 0) {
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append('file', file);
 
-    try {
-      const response = await axios.post('http://localhost:8080/upload', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
+      try {
+        const response = await axios.post('http://localhost:8080/upload', formData, {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        });
 
-      if (response.data.success) {
-        onModelDataChange(response.data.modelData, response.data.edgeData);
-      } else {
-        console.error('File upload failed');
+        if (response.data.success) {
+          onModelDataChange(response.data.modelData, response.data.edgeData);
+        } else {
+          console.error('File upload failed');
+        }
+      } catch (error) {
+        console.error('Error uploading file:', error);
       }
-    } catch (error) {
-      console.error('Error uploading file:', error);
-    }
 
-    setUploading(false);
-  };
+      setUploading(false);
+    }
+  }; // Moved this closing brace here to properly close the function
 
   return (
     <div className="flex items-center justify-center h-screen">
@@ -52,7 +54,7 @@ export default function FileUpload() {
         />
         <button
           className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3"
-          onClick={() => inputRef.current.click()}
+          onClick={() => inputRef.current?.click()}  // Added the optional chaining operator "?"
           disabled={uploading}
         >
           {uploading ? 'Analyzing...' : 'Upload Your Model'}
